@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 3</title>
+</head>
+<style type="text/css">
+	html
+	{
+		font-family: arial, sans;
+	}
+	body
+	{
+		margin: 0;
+		background-color: #E2E0E0 ; 
+	}
+	header 
+	{
+		color: #ffffff;
+		background-color: #31373B;
+		text-align: center;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #31373a;
+		font-size: 20px;
+	}
+	main
+	{
+		background-color: #fff;
+		text-align: justify;
+		width: 55%;
+		position: relative;
+		left: 23%;
+		border: 2px solid #BFBFC8;
+		top: 25px;
+		padding: 10px;
+		line-height: 1.5;
+	}
+	nav
+	{
+		border: 1px solid grey;
+		box-shadow: 0 0 4px #000;
+		background-color: #FFF;
+		text-align: center;
+	}
+	nav button
+	{
+		font-size: 17px;
+	}
+	nav li
+	{
+		display: inline;
+		margin-right: 0px; 
+		font-size: 20px;
+	}
+	nav button
+	{
+		border: none;
+		outline: none;
+		padding: 0 10px;
+		background-color: inherit;
+		height: 30px;
+		margin: 0;
+	}
+	nav button:hover
+	{
+		color: blue;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	button.btActive
+	{
+		font-weight: bold;
+		color: blue;
+	}
+	.tabs section
+	{
+		display: none;
+	}
+	section.tabActive
+	{
+		display: block;
+	}
+</style>
+<body>
+	<header>
+		<section>
+			<h1>Faculdade de Computação</h1>
+		</section>
+	</header>
+
+	<nav>
+		<ul>
+			<li><button>Ciências da Computação</button>|</li>
+			<li><button>Sistemas de Informação</button>|</li>
+			<li><button>Mestrado</button>|</li>
+			<li><button>Doutorado</button>|</li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="tabs">
+			<section>
+				<h2>Bacharelado em Ciências da Computação</h2>
+				<p>
+					O curso de bacharelado em Ciências da Computação é o marco inicial da Faculdade de Computação. Foi criado em 1988 e teve seu reconhecimento em 11 de fevereiro de 1993 por meio da Portaria 181/93 do MEC. O objetivo do curso é formar profissionais da área de informática com competência no desenvolvimento de software, atendendo adequadamente as exigências de mercado de trabalho, além de capacitar o egresso a concluir com sucesso programas de pós-graduação.
+				</p>
+				<p>
+					Os egressos do curso tem obtido grande exito na realização profissional, destacando, um consideravél número de empresas pertecentes á ex-alunos do curso; um grande número de alunos que infressam em consolidados cursos de pós-graduação no país e exterior; atuação significativa de nossos ex-alunos em atividades de ensino e pesquisa em instituições de ensino do nível superior; e outros tantos que atuam em grandes empresas nacionais e multinacionais.
+				</p>
+			</section>
+			<section>
+				<h2>Bacharelado em Sistemas de Informação</h2>
+				<p>
+					O curso de bacharelado em Sistemas de Informação foi criado em 2009 e teve seu reconhecimento em 31 de maio de 2013 por meio da Portaria 248/13 do MEC. 
+				</p>
+				<p>
+					O objetivo do curso é formar profissionais da área de informática com competência no desenvolvimento de software, atendendo adequadamente as exigências de mercado de trabalho, além de capacitar o egresso a concluir com sucesso programas de pós-graduação.
+				</p>
+			</section>		
+			<section>
+				<h2>Mestrado</h2>
+				<p>	
+					Martin Luther King è nato il 15 gennaio 1929 ad Atlanta, in Georgia, figlio maggiore di una famiglia nera americana della classe media. 	Suo padre era un pastore battista e sua madre era un'insegnante. All'età di 19 anni Luther King divenne pastore battista e successivamente si laureò come teologo al Crozer Seminary. Ha anche frequentato la Boston University, dove ha incontrato Coretta Scott, una studentessa di musica che ha sposato.
+					Nei suoi studi si è dedicato ai temi della filosofia della protesta non violenta, ispirandosi alle idee dell'indu Mohandas K. Gandhi.
+				</p>		
+				<p>
+					Nel 1954 divenne pastore della chiesa battista a Montgomery, in Alabama. Nel 1955, ci fu un boicottaggio dei trasporti della città come protesta contro un atto discriminatorio nei confronti di un passeggero nero, Luther King come presidente della Montgomery Improvement Association, organizzò il movimento, che durò un anno, King fece bombardare la sua casa. È così che ha iniziato la lotta per i diritti civili negli Stati Uniti.
+				</p>
+			</section>
+			<section>
+				<h2>Doutorado</h2>
+				<p>
+					Fils du Gondor! De Rohan! Mes frères.
+					Je vois dans tes yeux la même peur qui me prendrait au cœur. Un jour peut venir où le courage des Hommes échoue, où nous abandonnons nos amis et rompons tous les liens de fraternité, mais ce n'est pas ce jour.
+					Une heure de loups et de boucliers brisés lorsque l'âge des hommes s'écroule, mais ce n'est pas ce jour!
+					Ce jour nous nous battons! Par tout ce qui vous tient à cœur sur cette bonne terre, je vous dis de vous lever, hommes de l'Ouest!
+				</p>		
+			</section>	
+		</div>
+	</main>
+	<script>
+		window.onload = function () // inicializa uma função quando a pagina é carregada
+		{
+			buttons = document.querySelectorAll("nav button"); // atribui a variavel todos os botoes dentro da tag nav
+			for (let button of buttons) // for para passar por todos os botoes
+			{
+				button.addEventListener("click", changeTab) // atribui para cada botao a chamada da fução changeTab
+			}
+			openTab(0); // chama a função openTab passando o paremetro 0
+		}
+
+		function changeTab(e) // criação da função changeTab
+		{
+			const btAcionado = e.target; // indica qual dos botoes foi acionado 
+			const lidoBotao = btAcionado.parentNode; // indica em qual li o botao estava
+			const nodes = Array.from(lidoBotao.parentNode.children); // coloca em um vetor todos os li dentro da tag ol
+			const index = nodes.indexOf(lidoBotao); // com o indexOf no vetor, sabe-se a posição do li o qual teve o botao acionado
+			openTab(index); // chama a função openTab com o parametro sendo a posição do li acionado
+		}
+
+		function openTab(i) //criação da função openTab
+		{ 
+			const tabActive = document.querySelector(".tabActive"); // seleciona a tab atualmente ativa
+			const btActive = document.querySelector(".btActive");	// seleciona o botao atualmente ativo
+
+			if (tabActive !== null) // verifica se oque foi procurado existe 
+			{
+				tabActive.className = ""; // oculta a tab ativa tirando o valor do nome de classe da tag
+			}
+
+			if (btActive !== null)  // verifica se oque foi procurado existe
+			{
+				btActive.className = ""; // oculta o botao ativo tirando o valor do nome de classe da tag
+			}
+
+			document.querySelectorAll(".tabs section")[i].className = "tabActive"; //seleciona a section representada pelo valor passado para a função e troca o nome da clase
+			document.querySelectorAll("nav button")[i].className = "btActive"; //seleciona o button dento da tag nav representado pelo valor passado para a função e troca o nome da clase
+		}
+	</script>
+</body>
+</html>

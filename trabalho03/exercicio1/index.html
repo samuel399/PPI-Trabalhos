@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 1</title>
+	<style type="text/css">
+		html{
+			font-family: Arial, sans;
+		}
+		body{
+			background-image: url(../images/background1.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding: 30px;
+			margin: 0px;
+		}
+		.modal
+		{
+			background-color: #0006;
+			display: none;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+		.conteudoModal
+		{
+			background-color: #fff;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #aaa;
+			box-shadow: 0 0 5px #444;
+			width: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.conteudoModal button
+		{
+			width: 100%;
+			font-size: 20px;
+			background-color: #669;
+			outline: none;
+			padding: 10px;
+			cursor: pointer;
+			border: 1px solid #676;
+		}
+
+		
+	</style>
+</head>
+<body>
+	<main>
+
+		<h1>A FACOM</h1>
+
+		<p>A Faculdade de Computação (FACOM) da Universidade Federal de Uberlândia foi criada em 2000, a partir do extinto Departamento de Informática (DEINF), criado em 1988, no âmbito do CETEC.</p>
+
+		<p>No inicio dos anos 2000 foi criado na Faculdade o Progroma de Pós-Graduação em Ciências da Computação</p>
+
+		<button type="buttton" id="opModal">Modal</button>
+	</main>
+
+	<div id="testeModal" class="modal">
+
+		<div class="conteudoModal">
+		
+			<h2>Teste da função Modal</h2>
+			<button class="btFechar">Sair</button>
+		
+		</div>
+
+	</div>
+	<script>
+		window.onload = function () // cria a função quando a pagina é carregada
+		{
+			const modal = document.querySelector(".modal"); // seleciona dentro do html o div com a classe "modal" e salva na constante
+			const btClose = modal.querySelector(".btFechar"); // seleciona dentro do div da classe "modal" o botão com a classe "btFechar"
+
+			btClose.addEventListener("click", function () // adiciona um evento ao click do botao com a classe "btFechar"
+			{
+				modal.style.display = 'none'; // troca dentro do css o valor do campo 'display' para "none" fazendo o conteudo sumir
+			});
+
+			const btOpen = document.getElementById("opModal"); //seleciona dentro do html o botao com o id "opModal" e salva na constante
+			btOpen.addEventListener("click", function () // adiciona um evento ao botao com a classe "opModal"
+			{
+				modal.style.display = 'block'; // troca no css o valor do campo display para "block" fazendo o conteudo aparecer
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 4</title>
+</head>
+<style type="text/css">
+	html{
+			font-family: Arial, sans;
+		}
+		body
+		{
+			background-image: url(../images/background1.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			margin: 0px;
+		}
+		main
+		{
+			background-color: #fff;
+			width: 30%;
+			height: 55%;
+			border: 5px solid #fff;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		form
+		{
+			padding: 10px;
+			text-align: justify;
+		}
+		label
+		{
+			margin-right: 20px;
+		}
+		input
+		{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		span
+		{
+			color: red;
+			display: block;
+		}
+		button
+		{
+			margin-top: 10px;
+		}
+</style>
+<body>
+	<main>
+		<div class="loginBox">
+			<h3>Cadastro de Usuário</h3>
+			<form action="index.html" method="post" name="formCadastro" id="formCadastro">
+			
+				<div>
+					<label for="usuario">Usuáro: </label>
+					<input type="text" name="usuario" id="usuario" autocomplete="off">
+					<span></span>
+					
+				</div>
+
+				<div>
+					<label for="senha">Senha: </label>
+					<input type="password" name="senha" id="senha" autocomplete="off">
+					<span></span>
+					
+				</div>
+
+				<div>
+					<label for="email">E-mail: </label>
+					<input type="email" name="email" id="email" autocomplete="off">
+					<span></span>
+				</div>
+
+				<button>Cadastrar</button>
+			</form>
+		</div>
+	</main>
+	<script>
+		window.onload = function() 
+		{
+			document.forms.formCadastro.onsubmit = validaForm;
+		}
+
+		function validaForm(e) 
+		{
+			let form = e.target;
+			let formValida = true;
+
+			const spanUser = form.usuario.nextElementSibling;
+			const spanSenha = form.senha.nextElementSibling;
+			const spanEmail = form.email.nextElementSibling;
+
+			spanUser.textContent = "";
+			spanSenha.textContent = "";
+			spanEmail.textContent = "";
+
+			if (form.usuario.value === "")
+			{
+				spanUser.textContent = "O usuário deve ser preenchido";
+				formValida = false;
+			}
+
+			if (form.senha.value === "")
+			{
+				spanSenha.textContent = "A senha deve ser preenchida";
+				formValida = false;
+			}
+			
+			if (form.email.value === "")
+			{
+				spanEmail.textContent = "O email deve ser preenchido";
+				formValida = false;
+			}				
+
+			return formValida;		
+		}
+	</script>
+</body>
+</html>

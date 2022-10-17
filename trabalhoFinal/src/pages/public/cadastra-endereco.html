@@ -1,0 +1,67 @@
+<div class="container wrapper mt-5">
+
+    <div class="address-img">
+        <img  src="../src/assets/cadastro.svg" alt="" height="512" width="512">
+    </div>
+    <fieldset>
+        <legend>Cadastrar Endereço</legend>
+
+        <section >
+            <form action="../php/cadastra-endereco.php" method="POST">
+                <div class="row gy-4">
+                    <div class="col-12">
+                        <label for="cep" class="form-label" id="cep">CEP</label>
+                        <input id="cep" name="cep" type="text" class="form-control masked">
+                    </div>
+                    <div class="col-12">
+                        <label for="logradouro" class="form-label" id="logradouro">Logradouro</label>
+                        <input id="logradouro" name="logradouro" type="text" class="form-control">
+                    </div>
+                    <div class="col-12">
+                        <label for="bairro" class="form-label" id="bairro">Bairro</label>
+                        <input id="bairro" name="bairro" type="text" class="form-control">
+                    </div>
+                    <div class="col-sm-9">
+                        <label for="cidade" class="form-label" id="cidade">Cidade</label>
+                        <input id="cidade" name="cidade" type="text" class="form-control">
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="estado" class="form-label" id="estado">Estado</label>
+                        <select name="estado" id="estado" class="form-select">
+                            <option value=" "></option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+                <button class=" btn btn-primary mt-3">Cadastrar
+                </button>
+            </form>
+        </section>
+    </fieldset>
+</div>

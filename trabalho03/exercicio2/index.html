@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 2</title>
+	<style type="text/css">
+		html
+		{
+			background-color: #EDEEF0;
+			font-size: 18px;
+			font-family: Arial, sans;
+		}
+		main
+		{
+			background-color: #fff;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #aaa;
+			width: 30%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 25px;
+		}
+		li
+		{
+			background-color: #6DADE5;
+			width: 100%;
+			border: 4px solid #6DADE6;
+			border-radius: 5px;
+			margin-top: 3px;
+
+		}
+		li > button
+		{
+			float: right;
+			color: red;
+			border: none;
+			cursor: pointer;
+			background-color: #6DADE5;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<div>
+			<label for="lista">Lista de Compras:</label>
+			<input type="text" name="lista" id="lista">
+		</div>
+
+		<ol>
+		
+		</ol>
+	</main>
+	<script>
+		window.onload = function () // cria a função quando a pagina é carregada
+		{
+			const funcAdd = document.querySelector("#lista"); // seleciona dentro do html o input com o id 'lista'
+			funcAdd.addEventListener("keyup", e => // cria um evento para o input, para cada vez que a tecla Enter for acionada
+			{
+				if (e.key === "Enter") // verifica se a tecla aciondada é o Enter
+				{ 
+					addItem(); //caso seja verdadeiro a função addItem é chamada
+				}
+			});
+		}
+
+		function addItem() // cria a função que será executada quando o botao for clicado
+		{
+			const campoLista = document.querySelector("#lista"); // seleciona no html o valor do campo com o id 'lista' e salva na constante
+			const listaItens = document.querySelector("ol"); // seleciona no html a tag 'ol' e salva na constante	
+			const novoLi = document.createElement("li"); // é usado a criação de um li novo
+			const novoSp = document.createElement("span"); // é usado a criação de um span novo
+			const novoBt = document.createElement("button"); // é usado a criação de um botao novo
+
+			novoSp.textContent = campoLista.value; // coloca como valor do campo de texto do novo span o conteudo de campoLista
+			novoBt.textContent = "X"; // coloca como valor do botao o caractere X
+			novoLi.appendChild(novoSp); // adiciona dentro do li o novo campo span
+			novoLi.appendChild(novoBt); // adiciona dentro do li o novo campo botao
+			listaItens.appendChild(novoLi); // adiciona dentro do ol o novo campo li
+
+			novoBt.onclick = function () // adiciona uma função ao click do botao
+			{
+				listaItens.removeChild(novoLi);	// remove o li dentro do ol com o click
+			}
+
+			campoLista.value = ""; // reseta o valor do campo do input para vazio
+		}
+	</script>
+</body>
+</html>

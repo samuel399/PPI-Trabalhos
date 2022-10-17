@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Página que mostra um curriculo de um aluno do curso de Sistemas de Informações da materia de programação para internet">
+		<title>Ofertas de trabalho</title>
+	</head>
+	<body>
+		<header id="header">	
+			<table>
+				<tr>
+					<td colspan="2">
+						<h1>Ofertas de trabalho</h1>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<h2>Samuel Augusto</h2>
+					</td>
+					<td>
+						<img src="images/darkeater_midir_.jpg" alt="foto" width="150" height="150">
+					</td>
+				</tr>
+			</table>			
+		</header>
+		<hr>
+		<nav>
+			<table>
+				<tr>
+					<td><h2>Links</h2></td>
+					<td>
+						<a href="galeria.html" title="galeria">Galeria de Imagens</a>
+					</td>
+					<td>
+						<a href="index.html" title="dados curriculo">Curriculo</a>
+					</td>					
+					<td>
+						<a href="#formmulario" title="oferta trabalho">Ofertas de Trabalho</a>
+					</td>				
+				</tr>
+			</table>
+		</nav>
+		<hr>
+		<main>
+			<form action="ofertaTrabalho.html" method="post" autocomplete="off" id="formulario">
+				<div id="dadosPessoais">
+					<h1>Dados Pessoais:</h1>
+					<div>
+						<label for="nomePessoal">Nome: </label>
+						<input type="text" name="nomePessoal" id="nomePessoal" required maxlength="45">
+					</div>
+					
+					<div>
+						<label for="emailPessoal">E-mail: </label>
+						<input type="email" name="emailPessoal" id="emailPessoal" required maxlength="20">
+					</div>
+					
+					<div>
+						<label for="idadePessoal">Idade: </label>
+						<input type="number" name="idadePessoal" id="idadePessoal" min="0" max="95" required>
+					</div>
+
+					<div>
+						<label for="telefonePessoa">Telefone: </label>
+						<input type="tel" name="telefonePessoal" id="telefonePessoa" required maxlength="12">
+					</div>
+
+					<div>
+						<label for="dataNasc">Data de Nascimento: </label>
+						<input type="date" name="dataNasc" id="dataNasc">
+					</div>
+
+					<div>
+						<label for="sexo">Sexo:</label>
+						<select id="sexo" name="sexo">
+							<option value="m">Masculino</option>
+							<option value="f">Feminino</option>
+						</select>
+					</div>
+
+					<div>
+						<fieldset>
+							<legend>Estado Civil</legend>
+							<div>
+								<input type="radio" name="estadoCivil" value="solteiro" id="solteiro">	
+								<label for="solteiro">Solteiro(a)</label>
+							</div>
+							<div>
+								<input type="radio" name="estadoCivil" value="casado" id="casado">		
+								<label for="casado">Casado(a)</label>
+							</div>
+							<div>
+								<input type="radio" name="estadoCivil" value="divorciado" id="divorciado">	
+								<label for="divorciado">Divorciado(a)</label>
+							</div>
+							<div>
+								<input type="radio" name="estadoCivil" value="viuvo" id="viuvo">	
+								<label for="viuvo">Viuvo(a)</label>
+							</div>
+						</fieldset>	
+					</div>
+
+				</div>
+
+				<div id="dadosEmpresa">
+					<h1>Dados da Empresa:</h1>
+
+					<div>
+						<label for="cnpj">CNPJ: </label>
+						<input type="text" name="cnpj" id="cnpj" maxlength="14">
+					</div>
+
+					<div>
+						<label for="razaoSocial">Razão Social: </label>
+						<input type="text" name="razaoSocial" id="razaoSocial" maxlength="20">
+					</div>
+
+					<div>
+						<label for="areaAtuacao">Área de Atuação: </label>
+						<input type="text" name="areaAtuacao" id="areaAtuacao" maxlength="25">
+					</div>
+
+				</div>
+
+				<div id="dadosEndereco">
+					<h1>Endereço:</h1>
+
+					<div>
+						<label for="cep">CEP: </label>
+						<input type="text" name="cep" id="cep" maxlength="8" required>
+					</div>
+
+					<div>
+						<label for="tipologadouro">Tipo de Logadouro: </label>
+						<select name="tipologadouro" id="tipologadouro" required>
+							<option value="">Escolha</option>
+							<option value="rua">Rua</option>
+							<option value="avendia">Avenida</option>
+							<option value="praca">Praça</option>
+						</select>
+					</div>
+
+					<div>
+						<label for="logadouro">Logadouro: </label>
+						<input type="text" name="logadouro" id="logadouro" maxlength="35" required>
+					</div>
+
+					<div>
+						<label for="cidade">Cidade</label>
+						<input type="text" name="cidade" id="cidade" maxlength="25" required>
+					</div>
+
+					<div>
+						<label for="estado">Estado</label>
+						<input type="text" name="estado" id="estado" maxlength="25" required>
+					</div>
+
+				</div>
+
+				<div id="descrIntecao">
+					<h1>Motivo do Contato:</h1>
+					<textarea rows="20" cols="50" maxlength="1800"></textarea>
+				</div>
+
+				<div id="opcoesVaga">
+					<h1>Selecione as Opções:</h1>
+
+					<div id="opCheck">
+						<fieldset>
+							<legend>Escolha um ou mais Benefícios</legend>
+							<div>
+								<input type="checkbox" name="beneficios" value="treinamento" id="treino">	
+								<label for="treino">Treinamento</label>
+							</div>
+							<div>
+								<input type="checkbox" name="beneficios" value="passeOnibus" id="passe">		
+								<label for="passe">Passe de Ônibus</label>
+							</div>
+							<div>
+								<input type="checkbox" name="beneficios" value="decimo13" id="decimo">	
+								<label for="decimo">Décimo 13º salário</label>
+							</div>
+							<div>
+								<input type="checkbox" name="beneficios" value="planoSaude" id="plano">	
+								<label for="plano">Plano de Saúde</label>
+							</div>
+						</fieldset>	
+					</div>
+
+					<div id="opRadio">
+						<fieldset>
+							<legend>Escolha um Horário:</legend>
+							<div>
+								<input type="radio" name="horaDeTrabalho" value="manha" id="dia" checked>	
+								<label for="dia">Diurno</label>
+							</div>
+							<div>
+								<input type="radio" name="horaDeTrabalho" value="tarde" id="tarde">		
+								<label for="tarde">Integral/Tarde</label>
+							</div>
+							<div>
+								<input type="radio" name="horaDeTrabalho" value="noite" id="noite">	
+								<label for="noite">Noturno</label>
+							</div>
+						</fieldset>
+					</div>
+
+				</div>
+
+				<button>Enviar</button>
+				<input type="reset" value="Limpar">
+			</form>
+		</main>
+		<hr>
+		<footer>
+			<table>
+				<tr>
+					<td>
+						<h1>Informações para Contato:</h1>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<address>
+							<ul>
+								<li>Nome: Samuel Augusto</li>
+								<li>Telefone: (31) 98745-6123</li>
+								<li>E-mail: samuel@testeufu.org</li>
+								<li>Endereço: Rua dos tucanos azuis, 430</li>
+							</ul>	
+						</address>
+					</td>			
+				</tr>
+			</table>
+		</footer>
+	</body>
+</html>

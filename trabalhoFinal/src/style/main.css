@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --cor-menta: #96CFBE;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    background-color: #eee;
+}
+
+/* Cabeçalho da página */
+nav {
+    background-color: var(--cor-menta);
+}
+.logo {
+    transition: all .2s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.link {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+
+    text-decoration: none;
+    color: white;
+    
+}
+
+.link:hover {
+    color: #eee;
+}
+
+/* Rodapé da página */
+footer {
+    height: 150px;
+    background-color: var(--cor-menta);
+}
+
+
+/* Home */
+.divImagem {
+    height: 550px;
+    background: url('../assets/corridaHome.jpg');
+    background-size: cover;
+}
+
+.divSection h2 {
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.divSection p, .divSection ul {
+    font-size: 1.4rem;
+    text-align: justify;
+    padding: 20px;
+    list-style: none;
+}
+
+.divSection li {
+    margin-bottom: 10px;
+}
+
+.nomeClinica {
+    background-color: var(--cor-menta);
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+@media screen and (max-width: 998px) {
+    .divImagem {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .divSection p, .divSection ul {
+        font-size: 1rem;
+    }
+}
+
+/* Galeria de imagens */
+
+.pics {
+    padding: 20px;
+}
+
+.pics img {
+    width: 100%;
+    height: 350px;
+
+    border: solid 3px #fff;
+
+    transition: all .2s ease-in-out;
+}
+
+.pics img:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 998px) {
+    .pics img {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pics {
+        padding: 0;
+    }
+
+    .pics img:hover {
+        transform: none;
+    }
+    
+    .pics img {
+        transform: scale(0.9);
+        height: 300px;
+    }
+}
+
+/* Cadastra Endereço */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 680px;
+}
+
+.address-img img {
+    width: 512px;
+    height: 512px;
+}
+
+fieldset {
+    padding: 1rem;
+    border: 0.5 solid gray;
+    background-color: #eee;
+    width: 50%;
+}
+
+legend {
+    background-color: #555;
+    color: #fff;
+    padding: 3px 8px;
+}
+
+@media screen and (max-width: 996px) {
+    .address-img {
+        display: none;
+    }
+
+    fieldset {
+        width: 100%;
+    }
+}
